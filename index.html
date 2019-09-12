@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let Pharmacist = function (name, age) {
+        this.name = name;
+        this.age = age;
+
+        this.getName = function () {
+            return this.name;
+        };
+
+        this.setName = function (name) {
+            this.name = name;
+        };
+
+        this.getAge = function () {
+            return this.age;
+        };
+
+        this.setAge = function (age) {
+            this.age = age;
+        }
+
+        this.sellMedicine=function (medicine) {
+            medicine.setAmount(medicine.getAmount()-1);
+        }
+    };
+
+    let pharmacist1 = new Pharmacist('Tram Anh', 25);
+    let pharmacist2 = new Pharmacist('Le Phuong', 27);
+
+    let pName1 = pharmacist1.getName();
+    alert(pName1);
+
+    let pAge1 = pharmacist1.getAge();
+    alert(pAge1);
+
+    let Medicine = function (name, amount) {
+        this.name = name;
+        this.amount = amount;
+
+        this.getName = function () {
+            return this.name;
+        };
+
+        this.setName = function (name) {
+            this.name = name;
+        };
+
+        this.getAmount = function () {
+            return this.amount;
+        };
+
+        this.setAmount = function (amount) {
+            this.amount = amount;
+        };
+
+    };
+
+    let medicine1 = new Medicine('Rocket1h', 15);
+    let mName1 =  medicine1.getName();
+    alert(mName1);
+    let mAmount1 = medicine1.getAmount();
+    alert(mAmount1);
+
+    pharmacist1.sellMedicine(medicine1);
+    let mAmountUpdate = medicine1.getAmount();
+    alert(mAmountUpdate);
+
+
+</script>
+
+</body>
+</html>
